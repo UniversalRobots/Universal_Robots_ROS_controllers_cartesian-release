@@ -1,0 +1,12 @@
+Source: ros-melodic-cartesian-trajectory-controller
+Section: misc
+Priority: optional
+Maintainer: Stefan Scherzinger <scherzin@fzi.de>
+Build-Depends: debhelper (>= 9.0.0), ros-melodic-actionlib, ros-melodic-actionlib-msgs, ros-melodic-cartesian-interface, ros-melodic-cartesian-trajectory-interpolation, ros-melodic-catkin, ros-melodic-control-msgs, ros-melodic-controller-manager, ros-melodic-controller-manager-msgs, ros-melodic-hardware-interface, ros-melodic-joint-state-controller, ros-melodic-joint-trajectory-controller, ros-melodic-kdl-parser, ros-melodic-pluginlib, ros-melodic-robot-state-publisher, ros-melodic-ros-control-boilerplate, ros-melodic-roscpp, ros-melodic-rospy, ros-melodic-rostest, ros-melodic-speed-scaling-interface, ros-melodic-trajectory-msgs, ros-melodic-xacro
+Homepage: 
+Standards-Version: 3.9.2
+
+Package: ros-melodic-cartesian-trajectory-controller
+Architecture: any
+Depends: ${shlibs:Depends}, ${misc:Depends}, ros-melodic-cartesian-interface, ros-melodic-cartesian-trajectory-interpolation, ros-melodic-controller-interface, ros-melodic-controller-manager, ros-melodic-hardware-interface, ros-melodic-kdl-parser, ros-melodic-pluginlib, ros-melodic-roscpp, ros-melodic-rospy, ros-melodic-speed-scaling-interface
+Description: A Cartesian trajectory controller with multiple hardware interface support
