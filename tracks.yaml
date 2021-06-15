@@ -44,7 +44,7 @@ tracks:
     last_version: 0.1.2
     name: upstream
     patches: null
-    release_inc: '1'
+    release_inc: '2'
     release_repo_url: https://github.com/UniversalRobots/Universal_Robots_ROS_controllers_cartesian-release.git
     release_tag: :{version}
     ros_distro: noetic
