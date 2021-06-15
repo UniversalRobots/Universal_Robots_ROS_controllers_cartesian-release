@@ -1,0 +1,22 @@
+ros-noetic-twist-controller (0.1.2-2focal) focal; urgency=high
+
+  * Remove more trailing whitespaces
+  * Contributors: Felix Exner
+
+ -- Stefan Scherzinger <scherzin@fzi.de>  Mon, 14 Jun 2021 22:00:00 -0000
+
+ros-noetic-twist-controller (0.1.1-2focal) focal; urgency=high
+
+  * Removed trailing whitespaces from README's
+  * Contributors: Felix Exner
+
+ -- Stefan Scherzinger <scherzin@fzi.de>  Mon, 14 Jun 2021 22:00:00 -0000
+
+ros-noetic-twist-controller (0.1.0-2focal) focal; urgency=high
+
+  * Initial release
+  * Contributors: Felix Exner, Stefan Scherzinger
+
+ -- Stefan Scherzinger <scherzin@fzi.de>  Mon, 14 Jun 2021 22:00:00 -0000
+
+
