@@ -1,0 +1,22 @@
+ros-melodic-twist-controller (0.1.2-1bionic) bionic; urgency=high
+
+  * Remove more trailing whitespaces
+  * Contributors: Felix Exner
+
+ -- Stefan Scherzinger <scherzin@fzi.de>  Mon, 14 Jun 2021 22:00:00 -0000
+
+ros-melodic-twist-controller (0.1.1-1bionic) bionic; urgency=high
+
+  * Removed trailing whitespaces from README's
+  * Contributors: Felix Exner
+
+ -- Stefan Scherzinger <scherzin@fzi.de>  Mon, 14 Jun 2021 22:00:00 -0000
+
+ros-melodic-twist-controller (0.1.0-1bionic) bionic; urgency=high
+
+  * Initial release
+  * Contributors: Felix Exner, Stefan Scherzinger
+
+ -- Stefan Scherzinger <scherzin@fzi.de>  Mon, 14 Jun 2021 22:00:00 -0000
+
+
