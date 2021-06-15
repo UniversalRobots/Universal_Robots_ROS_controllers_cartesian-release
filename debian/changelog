@@ -1,0 +1,20 @@
+ros-noetic-ros-controllers-cartesian (0.1.2-2focal) focal; urgency=high
+
+
+
+ -- Felix Exner <exner@fzi.de>  Mon, 14 Jun 2021 22:00:00 -0000
+
+ros-noetic-ros-controllers-cartesian (0.1.1-2focal) focal; urgency=high
+
+
+
+ -- Felix Exner <exner@fzi.de>  Mon, 14 Jun 2021 22:00:00 -0000
+
+ros-noetic-ros-controllers-cartesian (0.1.0-2focal) focal; urgency=high
+
+  * Initial release
+  * Contributors: Felix Exner, Stefan Scherzinger
+
+ -- Felix Exner <exner@fzi.de>  Mon, 14 Jun 2021 22:00:00 -0000
+
+
