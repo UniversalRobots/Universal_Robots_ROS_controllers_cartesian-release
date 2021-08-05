@@ -1,1 +1,1 @@
-{"base": "5860754", "parent": "debian/noetic/cartesian_trajectory_controller", "previous": "0316824", "trim": "", "trimbase": ""}
+{"base": "27d9fae", "parent": "debian/noetic/cartesian_trajectory_controller", "previous": "cb700d9", "trim": "", "trimbase": ""}
