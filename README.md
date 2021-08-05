@@ -1,71 +1,118 @@
-# Cartesian ROS Controllers
+# Cartesian Interface
 
-This package brings mechanisms for Cartesian control to the ROS-control framework.
-
-## Overview
-
-New functionality (colored):
-
-![Colored: New contributions from this package or related](ros_controllers_cartesian/doc/cartesian_ros_control.png)
-
+This package provides new hardware interfaces to implement Cartesian ROS control
+for robot manipulators.
 
 ## Rationale
+Several OEMs provide native Cartesian interfaces in their robot drivers.
+By offering new according hardware interfaces, implementers of ROS controllers get direct access to Cartesian buffers for reading and writing.
+Whether this provides advantages over the classic joint-based interfaces of course depends on personal use cases.
+The main difference is that in the Cartesian case the robot takes care of Inverse Kinematics.
 
-As opposed to joint-based control, Cartesian control is often more intuitive for programmers to specify how a tool (robot end-effector) should move in their application.
-For instance, gluing, grinding, polishing and all sorts of other surface-related tasks benefit from a straight-forward task formulation with Cartesian coordinates.
+## Usage
+This package provides ``PoseCommandInterface`` and ``TwistCommandInterface``
+for read/write access and ``CartesianStateInterface`` for pure read access.
+You would add them to your hardware abstraction like this:
 
-Currently, there is no support of Cartesian control in ROS. Yet, the number of OEMs, whose drivers support Cartesian control interfaces is growing.
-This set of packages aims at filling this gap and get you started with Cartesian control.
+```c++
+#include <cartesian_interface/cartesian_command_interface.h>
+#include <cartesian_interface/cartesian_state_handle.h>
+
+class YourRobot : public hardware_interface::RobotHW
+{
+...
+
+  // New interfaces for Cartesian ROS-controllers
+  ros_controllers_cartesian::CartesianStateInterface cart_interface_;
+  ros_controllers_cartesian::TwistCommandInterface twist_interface_;
+  ros_controllers_cartesian::PoseCommandInterface pose_interface_;
+  ...
+
+  // Buffers for read/write access
+  geometry_msgs::Pose cart_pose_;
+  geometry_msgs::Twist cart_twist_;
+  geometry_msgs::Accel cart_accel_;
+  geometry_msgs::Accel cart_jerk_;
+  geometry_msgs::Twist twist_command_;
+  geometry_msgs::Pose pose_command_;
+  ...
+
+}
+```
+Registering them could look like this:
+```c++
+YourRobot::YourRobot()
+{
+...
+  ros_controllers_cartesian::CartesianStateHandle cart_state_handle("base", "tip", &cart_pose_, &cart_twist_,
+                                                                &cart_accel_, &cart_jerk_);
+  cart_interface_.registerHandle(cart_state_handle);
+
+  twist_interface_.registerHandle(
+      ros_controllers_cartesian::TwistCommandHandle(cart_interface_.getHandle("tip"), &twist_command_));
+  twist_interface_.getHandle("tip");
+
+  pose_interface_.registerHandle(
+      ros_controllers_cartesian::PoseCommandHandle(cart_interface_.getHandle("tip"), &pose_command_));
+  pose_interface_.getHandle("tip");
+
+  // Register interfaces
+  registerInterface(&twist_interface_);
+  registerInterface(&pose_interface_);
+  ...
+}
+
+```
+
+Note the two strings `base` and `tip` during instantiation of the Cartesian state handle.
+They represent frames in your robot kinematics and their names will vary from robot to robot.
+There's a convention behind that assumes that `base` is the reference frame in which `tip` is given.
+`tip` is the end-point of the robot we want to control and represents a unique identifier for the handle.
+You can think of it as resource names in joint-based ROS control.
 
 
-## Major features at a glance
-- **Add Cartesian functionality to ROS control**. This brings new interfaces for
-  controller design, such as a ```PoseCommandInterface```, a ```TwistCommandInterface```, and a new Cartesian trajectory  definition. Example controllers include a ```TwistController``` and a ```CartesianTrajectoryController```.
+## Cartesian ROS controllers
 
-- **Enable Cartesian trajectory control** in your applications. Specify your task comfortably with
-  waypoints in task space. ROS-side interpolation and streaming of setpoints over the new interfaces
-  is only one of several alternatives. See the
-  [`cartesian_control_msgs`](https://github.com/UniversalRobots/Universal_Robots_ROS_cartesian_control_msgs)
-  package for details about the interface definition.
+When implementing a ROS controller, you would add the according handle for
+read/write access, e.g. in the case of Cartesian pose control:
+```c++
+#include <cartesian_interface/cartesian_command_interface.h>
+...
 
-- **Use (conventional) ROS control** for Cartesian trajectory execution. You don't need to change
-  anything in the driver's HW-abstraction of your specific robot if that supports current ROS
-  control. The `position_controllers/CartesianTrajectoryController` controller uses an IK solver to
-  generate joint commands from the Cartesian trajectory during runtime. Thus, existing joint command
-  interfaces (which should be present in most ROS-Control-enabled robot drivers) are sufficient for
-  using this controller.
+class YourController : public controller_interface::Controller<ros_controllers_cartesian::PoseCommandInterface>
+{
 
-- **Hand-over control to the robot by forwarding trajectories**.
-Two new interfaces ```CartesianTrajectoryInterface``` and ```JointTrajectoryInterface``` let robots
-take care of driver-side interpolation to achieve best performance. This functionality lives in a
-[separate repository](https://github.com/UniversalRobots/Universal_Robots_ROS_passthrough_controllers).
+...
+private:
+  ros_controllers_cartesian::PoseCommandHandle handle_;
+...
+}
+```
+During instantiation of the handle, you ask for the end-point you want to control:
+```c++
+  handle_ = hw->getHandle("tip");
+```
+and then use that handle to implement your control loop in `update(...)`:
+```c++
 
-- **Speed-scale trajectory execution**. All trajectory executions (both Cartesian and joint-based) can be speed-scaled within 0 to 100% at runtime. This gives you flexibility in setting-up new applications and during test runs. Changing this continuously even lets you reshape trajectory execution without re-teaching. This functionality lives in a
-[separate
-repository](https://github.com/UniversalRobots/Universal_Robots_ROS_scaled_controllers) but is
-used for controllers in this repository.
+  // Get current state from the robot hardware
+  geometry_msgs::Pose pose = handle_.getPose();
+  geometry_msgs::Twist twist = handle_.getTwist();
+  geometry_msgs::Accel accel = handle_.getAccel();
 
+  geometry_msgs::Pose target;
 
-## Robots Overview
-In the spirit of ROS control, the implementation is robot-agnostic and shall support applications on
-a wide range of robots. The table below shows what features will be available with this enhancement.
-Robot drivers with a hardware interface adapted specifically for those new features will support
-more features than existing ones without modifications.
+  // Implement your control law here
 
-| Feature                                               | Robot drivers with adapted HW interface | Robots with current ROS control |
-| --------                                              | --------                                | ---                             |
-| Cartesian trajectory control using joint-commands     | &check;                                 | &check;                         |
-| Cartesian trajectory control using Cartesian commands | &check;                                 |                                 |
-| Cartesian trajectory forwarding                       | &check;                                 |                                 |
-| Joint trajectory forwarding                           | &check;                                 |                                 |
-| Speed-scale trajectories                              | &check;                                 |                                 |
-
+  handle_.setCommand(target);
+...
+```
 
 ## Acknowledgement
 Developed in collaboration between:
 
-[<img height="60" alt="Universal Robots A/S" src="ros_controllers_cartesian/doc/resources/ur_logo.jpg">](https://www.universal-robots.com/) &nbsp; and &nbsp;
-[<img height="60" alt="FZI Research Center for Information Technology" src="ros_controllers_cartesian/doc/resources/fzi_logo.png">](https://www.fzi.de).
+[<img height="60" alt="Universal Robots A/S" src="../ros_controllers_cartesian/doc/resources/ur_logo.jpg">](https://www.universal-robots.com/) &nbsp; and &nbsp;
+[<img height="60" alt="FZI Research Center for Information Technology" src="../ros_controllers_cartesian/doc/resources/fzi_logo.png">](https://www.fzi.de).
 
 ***
 <!--
