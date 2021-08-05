@@ -1,7 +1,7 @@
 <?xml version="1.0"?>
 <package format="2">
   <name>cartesian_trajectory_interpolation</name>
-  <version>0.1.3</version>
+  <version>0.1.4</version>
   <description>Cartesian trajectory interpolation as a standalone library</description>
 
   <!-- One maintainer tag required, multiple allowed, one person per tag -->
@@ -20,7 +20,7 @@
   <!-- Url tags are optional, but multiple are allowed, one per tag -->
   <!-- Optional attribute type can be: website, bugtracker, or repository -->
   <!-- Example: -->
-  <!-- <url type="website">http://wiki.ros.org/cartesian_trajectory_interpolation</url> -->
+  <url type="website">http://wiki.ros.org/cartesian_trajectory_interpolation</url>
 
 
   <!-- Author tags are optional, multiple are allowed, one per tag -->
