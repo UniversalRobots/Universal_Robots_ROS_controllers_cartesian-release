@@ -1,0 +1,12 @@
+Source: ros-melodic-cartesian-trajectory-interpolation
+Section: misc
+Priority: optional
+Maintainer: Stefan Scherzinger <scherzin@fzi.de>
+Build-Depends: debhelper (>= 9.0.0), ros-melodic-cartesian-control-msgs, ros-melodic-catkin, ros-melodic-joint-trajectory-controller, ros-melodic-roscpp, ros-melodic-rospy, ros-melodic-rosunit, ros-melodic-tf2-eigen
+Homepage: http://wiki.ros.org/cartesian_trajectory_interpolation
+Standards-Version: 3.9.2
+
+Package: ros-melodic-cartesian-trajectory-interpolation
+Architecture: any
+Depends: ${shlibs:Depends}, ${misc:Depends}, ros-melodic-cartesian-control-msgs, ros-melodic-joint-trajectory-controller, ros-melodic-roscpp, ros-melodic-rospy, ros-melodic-tf2-eigen
+Description: Cartesian trajectory interpolation as a standalone library
