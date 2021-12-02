@@ -2,6 +2,9 @@
 Changelog for package cartesian_trajectory_interpolation
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
+0.1.5 (2021-12-02)
+------------------
+
 0.1.4 (2021-08-05)
 ------------------
 * Add websites to package.xml files
