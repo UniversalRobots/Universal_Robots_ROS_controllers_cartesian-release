@@ -1,0 +1,55 @@
+ros-noetic-twist-controller (0.1.6-1focal) focal; urgency=high
+
+  * add missing pluginlib (#16 <https://github.com/UniversalRobots/Universal_Robots_ROS_controllers_cartesian/pull/16>)
+  * Clean up package.xml files (#13 <https://github.com/UniversalRobots/Universal_Robots_ROS_controllers_cartesian/issues/13>)
+  * Contributors: Felix Exner, Hongzhuo Liang
+
+ -- Stefan Scherzinger <scherzin@fzi.de>  Tue, 11 Jun 2024 22:00:00 -0000
+
+ros-noetic-twist-controller (0.1.5-1focal) focal; urgency=high
+
+  * Rename library target (#10 <https://github.com/UniversalRobots/Universal_Robots_ROS_controllers_cartesian/issues/10>)
+    Using the cartesian prefix for the library target shall avoid clashes
+    with IPA's cob_twist_controller.
+  * Contributors: Stefan Scherzinger
+
+ -- Stefan Scherzinger <scherzin@fzi.de>  Wed, 01 Dec 2021 23:00:00 -0000
+
+ros-noetic-twist-controller (0.1.4-1focal) focal; urgency=high
+
+  * Add websites to package.xml files
+  * Update image paths of partner logos (#4 <https://github.com/UniversalRobots/Universal_Robots_ROS_controllers_cartesian/issues/4>)
+  * Contributors: Felix Exner
+
+ -- Stefan Scherzinger <scherzin@fzi.de>  Wed, 04 Aug 2021 22:00:00 -0000
+
+ros-noetic-twist-controller (0.1.3-1focal) focal; urgency=high
+
+  * Fixed namespace of controller plugin (#3 <https://github.com/UniversalRobots/Universal_Robots_ROS_controllers_cartesian/issues/3>)
+    It clearly contained a typo
+  * Contributors: Felix Exner
+
+ -- Stefan Scherzinger <scherzin@fzi.de>  Tue, 22 Jun 2021 22:00:00 -0000
+
+ros-noetic-twist-controller (0.1.2-1focal) focal; urgency=high
+
+  * Remove more trailing whitespaces
+  * Contributors: Felix Exner
+
+ -- Stefan Scherzinger <scherzin@fzi.de>  Mon, 14 Jun 2021 22:00:00 -0000
+
+ros-noetic-twist-controller (0.1.1-1focal) focal; urgency=high
+
+  * Removed trailing whitespaces from README's
+  * Contributors: Felix Exner
+
+ -- Stefan Scherzinger <scherzin@fzi.de>  Mon, 14 Jun 2021 22:00:00 -0000
+
+ros-noetic-twist-controller (0.1.0-1focal) focal; urgency=high
+
+  * Initial release
+  * Contributors: Felix Exner, Stefan Scherzinger
+
+ -- Stefan Scherzinger <scherzin@fzi.de>  Mon, 14 Jun 2021 22:00:00 -0000
+
+

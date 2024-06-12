@@ -1,0 +1,13 @@
+Source: ros-noetic-twist-controller
+Section: misc
+Priority: optional
+Maintainer: Stefan Scherzinger <scherzin@fzi.de>
+Build-Depends: debhelper (>= 9.0.0), ros-noetic-cartesian-interface, ros-noetic-catkin, ros-noetic-controller-interface, ros-noetic-dynamic-reconfigure, ros-noetic-geometry-msgs, ros-noetic-hardware-interface, ros-noetic-pluginlib, ros-noetic-realtime-tools, ros-noetic-roscpp
+Homepage: http://wiki.ros.org/twist_controller
+Standards-Version: 3.9.2
+
+Package: ros-noetic-twist-controller
+Architecture: any
+Depends: ${shlibs:Depends}, ${misc:Depends}, ros-noetic-cartesian-interface, ros-noetic-controller-interface, ros-noetic-dynamic-reconfigure, ros-noetic-geometry-msgs, ros-noetic-hardware-interface, ros-noetic-pluginlib, ros-noetic-realtime-tools, ros-noetic-roscpp
+Description: A ros_control controller accepting Cartesian twist messages in order to move a robot manipulator.
+ It uses a Cartesian interface to the robot, so that the robot hardware takes care about doing the inverse kinematics. This could be used e.g. for visual servoing applications.
