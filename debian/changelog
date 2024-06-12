@@ -1,0 +1,51 @@
+ros-noetic-cartesian-trajectory-interpolation (0.1.6-1focal) focal; urgency=high
+
+  * Changed the order of multiplication when calculating quaternion based… (#15 <https://github.com/UniversalRobots/Universal_Robots_ROS_controllers_cartesian/issues/15>)
+  * Correct spelling
+  * Added a check to ensure that the shortest path is followed when interpolating between two orientations (14 <https://github.com/UniversalRobots/Universal_Robots_ROS_controllers_cartesian/pull/14>)
+  * Clean up package.xml files (#13 <https://github.com/UniversalRobots/Universal_Robots_ROS_controllers_cartesian/issues/13>)
+  * Contributors: Felix Exner, Mads Holm Peters, Stefan Scherzinger
+
+ -- Stefan Scherzinger <scherzin@fzi.de>  Tue, 11 Jun 2024 22:00:00 -0000
+
+ros-noetic-cartesian-trajectory-interpolation (0.1.5-1focal) focal; urgency=high
+
+
+
+ -- Stefan Scherzinger <scherzin@fzi.de>  Wed, 01 Dec 2021 23:00:00 -0000
+
+ros-noetic-cartesian-trajectory-interpolation (0.1.4-1focal) focal; urgency=high
+
+  * Add websites to package.xml files
+  * Update image paths of partner logos (#4 <https://github.com/UniversalRobots/Universal_Robots_ROS_controllers_cartesian/issues/4>)
+  * Contributors: Felix Exner
+
+ -- Stefan Scherzinger <scherzin@fzi.de>  Wed, 04 Aug 2021 22:00:00 -0000
+
+ros-noetic-cartesian-trajectory-interpolation (0.1.3-1focal) focal; urgency=high
+
+
+
+ -- Stefan Scherzinger <scherzin@fzi.de>  Tue, 22 Jun 2021 22:00:00 -0000
+
+ros-noetic-cartesian-trajectory-interpolation (0.1.2-1focal) focal; urgency=high
+
+
+
+ -- Stefan Scherzinger <scherzin@fzi.de>  Mon, 14 Jun 2021 22:00:00 -0000
+
+ros-noetic-cartesian-trajectory-interpolation (0.1.1-1focal) focal; urgency=high
+
+  * Removed trailing whitespaces from README's
+  * Contributors: Felix Exner
+
+ -- Stefan Scherzinger <scherzin@fzi.de>  Mon, 14 Jun 2021 22:00:00 -0000
+
+ros-noetic-cartesian-trajectory-interpolation (0.1.0-1focal) focal; urgency=high
+
+  * Initial release
+  * Contributors: Felix Exner, Stefan Scherzinger
+
+ -- Stefan Scherzinger <scherzin@fzi.de>  Mon, 14 Jun 2021 22:00:00 -0000
+
+
