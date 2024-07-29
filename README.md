@@ -1,3 +1,31 @@
+## ros_controllers_cartesian (noetic) - 0.1.7-1
+
+The packages in the `ros_controllers_cartesian` repository were released into the `noetic` distro by running `/usr/bin/bloom-release ros_controllers_cartesian --rosdistro noetic --track noetic` on `Mon, 29 Jul 2024 08:18:51 -0000`
+
+These packages were released:
+- `cartesian_interface`
+- `cartesian_trajectory_controller`
+- `cartesian_trajectory_interpolation`
+- `ros_controllers_cartesian`
+- `twist_controller`
+
+Version of package(s) in repository `ros_controllers_cartesian`:
+
+- upstream repository: https://github.com/UniversalRobots/Universal_Robots_ROS_controllers_cartesian.git
+- release repository: https://github.com/UniversalRobots/Universal_Robots_ROS_controllers_cartesian-release.git
+- rosdistro version: `0.1.6-1`
+- old version: `0.1.6-1`
+- new version: `0.1.7-1`
+
+Versions of tools used:
+
+- bloom version: `0.12.0`
+- catkin_pkg version: `1.0.0`
+- rosdep version: `0.24.0`
+- rosdistro version: `0.9.1`
+- vcstools version: `0.1.42`
+
+
 ## ros_controllers_cartesian (noetic) - 0.1.6-1
 
 The packages in the `ros_controllers_cartesian` repository were released into the `noetic` distro by running `/usr/bin/bloom-release ros_controllers_cartesian --rosdistro noetic --track noetic` on `Wed, 12 Jun 2024 08:32:23 -0000`
