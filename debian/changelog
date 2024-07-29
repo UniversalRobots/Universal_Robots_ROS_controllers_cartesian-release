@@ -1,0 +1,56 @@
+ros-noetic-cartesian-trajectory-controller (0.1.7-1focal) focal; urgency=high
+
+  * Move ik_solver header files to cartesian_trajectory_controller (#19 <https://github.com/UniversalRobots/Universal_Robots_ROS_controllers_cartesian/issues/19>)
+  * Contributors: Felix Exner (fexner)
+
+ -- Stefan Scherzinger <scherzin@fzi.de>  Sun, 28 Jul 2024 22:00:00 -0000
+
+ros-noetic-cartesian-trajectory-controller (0.1.6-1focal) focal; urgency=high
+
+  * Clean up package.xml files (#13 <https://github.com/UniversalRobots/Universal_Robots_ROS_controllers_cartesian/issues/13>)
+  * Contributors: Felix Exner
+
+ -- Stefan Scherzinger <scherzin@fzi.de>  Tue, 11 Jun 2024 22:00:00 -0000
+
+ros-noetic-cartesian-trajectory-controller (0.1.5-1focal) focal; urgency=high
+
+
+
+ -- Stefan Scherzinger <scherzin@fzi.de>  Wed, 01 Dec 2021 23:00:00 -0000
+
+ros-noetic-cartesian-trajectory-controller (0.1.4-1focal) focal; urgency=high
+
+  * Make control update open-loop without active action (#5 <https://github.com/UniversalRobots/Universal_Robots_ROS_controllers_cartesian/issues/5>)
+  * Add websites to package.xml files
+  * Update image paths of partner logos (#4 <https://github.com/UniversalRobots/Universal_Robots_ROS_controllers_cartesian/issues/4>)
+  * Contributors: Felix Exner, Stefan Scherzinger
+
+ -- Stefan Scherzinger <scherzin@fzi.de>  Wed, 04 Aug 2021 22:00:00 -0000
+
+ros-noetic-cartesian-trajectory-controller (0.1.3-1focal) focal; urgency=high
+
+
+
+ -- Stefan Scherzinger <scherzin@fzi.de>  Tue, 22 Jun 2021 22:00:00 -0000
+
+ros-noetic-cartesian-trajectory-controller (0.1.2-1focal) focal; urgency=high
+
+
+
+ -- Stefan Scherzinger <scherzin@fzi.de>  Mon, 14 Jun 2021 22:00:00 -0000
+
+ros-noetic-cartesian-trajectory-controller (0.1.1-1focal) focal; urgency=high
+
+  * Removed trailing whitespaces from README's
+  * Contributors: Felix Exner
+
+ -- Stefan Scherzinger <scherzin@fzi.de>  Mon, 14 Jun 2021 22:00:00 -0000
+
+ros-noetic-cartesian-trajectory-controller (0.1.0-1focal) focal; urgency=high
+
+  * Initial release
+  * Contributors: Felix Exner, Stefan Scherzinger
+
+ -- Stefan Scherzinger <scherzin@fzi.de>  Mon, 14 Jun 2021 22:00:00 -0000
+
+
